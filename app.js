@@ -47,10 +47,11 @@ function updateWeatherDisplay(city, weather) {
     };
 
     document.getElementById('city-name').textContent = city;
-    document.getElementById('temperature').textContent = `Temperature: ${weather.temperature}°C`;
+    document.getElementById('temperature').textContent = `${weather.temperature}°C`;
     document.getElementById('humidity').textContent = `Humidity: ${weather.humidity}%`;
     document.getElementById('wind').textContent = `Wind: ${weather.windSpeed} km/h from ${weather.windDirection} degrees`;
     document.getElementById('weather-desc').textContent = `Weather: ${weatherDescriptions[weather.weatherCode] || weather.weatherCode}`;
+    updateDateTime();
 
     const body = document.body;
     const weatherBackgrounds = {
@@ -66,4 +67,20 @@ function updateWeatherDisplay(city, weather) {
     };
     const defaultBackground = 'images/default.jpg';
     body.style.backgroundImage = `url("${weatherBackgrounds[weather.weatherCode] || defaultBackground}")`;
+
+}
+
+function updateDateTime() {
+    const now = new Date();
+    const day = now.getDate();
+    const month = now.toLocaleString('en-US', { month: 'long' });
+    const hour = now.getHours() % 12 || 12;
+    const minute = now.getMinutes().toString().padStart(2, '0');
+    const amPm = now.getHours() >= 12 ? 'PM' : 'AM';
+
+
+    const ordinal = ((day % 10 === 1 && day !== 11) ? 'st' : (day % 10 === 2 && day !== 12) ? 'nd' : (day % 10 === 3 && day !== 13) ? 'rd' : 'th');
+
+    const formattedDate = `${day}${ordinal} ${month} ${hour}:${minute} ${amPm}`;
+    document.getElementById('date-time').textContent = formattedDate;
 }

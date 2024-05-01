@@ -1,41 +1,90 @@
 body,
 html {
-    height: 100%;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background-size: cover;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: url('image/default.jpg');
+    background-size: cover;
+    background-position: center;
 }
 
 .weather-app {
     width: 100%;
     max-width: 600px;
-    margin: auto;
-    padding-top: 50px;
+    padding: 20px;
     text-align: center;
+    border-radius: 15px;
 }
 
-input[type="text"],
-button {
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex: 1;
     padding: 10px;
-    margin: 5px;
+    margin-right: 10px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
+    font-weight: 300;
 }
 
 button {
-    background-color: #4CAF50;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #71717128;
     color: white;
     cursor: pointer;
 }
 
 .weather-result {
     display: none;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(8px);
+    margin-top: 20px;
     padding: 20px;
     border-radius: 10px;
-    margin-top: 20px;
-    font-size: 22px;
+    color: #fff;
+}
+
+#humidity,
+#wind,
+#weather-desc {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: #2e2e2e;
+    padding-top: 16px;
+}
+
+#date-time {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #2e2e2e;
+}
+
+#city-name {
+    font-size: 64px;
+    font-weight: 900;
+    margin: 20px 0;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #2e2e2e;
+}
+
+#temperature {
+    font-size: 96px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 300;
+    color: #2e2e2e;
 }

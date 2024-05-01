@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Orbitron:wght@400..900&display=swap"
         rel="stylesheet">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
@@ -15,17 +15,28 @@
 
 <body>
     <div class="weather-app">
-        <input type="text" id="search-box" placeholder="Enter city name...">
-        <button id="search-button">Search</button>
+
+        <div class="search-box">
+            <input type="text" id="search-box" placeholder="Enter city name...">
+            <button id="search-button">
+                <img src="icons\search.svg" alt="search_icon">
+            </button>
+        </div>
+
         <div class="weather-result">
-            <h2 id="city-name">City Name</h2>
-            <div id="temperature">Temperature: --°C</div>
-            <div id="humidity">Humidity: --%</div>
-            <div id="wind">Wind: -- km/h</div>
-            <div id="weather-desc">Weather: --</div>
+            <div id="date-time"></div>
+            <div id="city-name"></div>
+            <div id="temperature"></div>
+            <div class="other-details">
+                <div id="humidity">--%</div>
+                <div id="wind">km/h</div>
+                <div id="weather-desc">--</div>
+            </div>
+
         </div>
     </div>
     <script src="app.js"></script>
 </body>
+
 
 </html>
